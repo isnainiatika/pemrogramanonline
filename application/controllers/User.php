@@ -108,4 +108,68 @@ class User extends CI_Controller
             }
         }
     }
+    public function praktikum()
+    {
+        $data['title'] = 'Praktikum Pemrograman Online';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['berkas'] = $this->db->get('tb_berkas');
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/praktikum', $data);
+        $this->load->view('templates/footer');
+    }
+    public function pengumpulan()
+    {
+        $data['title'] = 'Praktikum Pemrograman Online';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('halpengumpulan', $data);
+        $this->load->view('templates/footer');
+    }
+    function proses()
+    {
+        $config['upload_path']          = './berkas/';
+        $config['allowed_types']        = 'pdf';
+        // $config['max_size']             = 10000;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+        // $config['encrypt_name']			= TRUE;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('kumpul')) {
+            $error = array('error' => $this->upload->display_errors());
+            var_dump($config);
+            $this->load->view('user/praktikum', $error);
+        } else {
+            $data['nama'] = $this->input->post('nama');
+            $data['nim'] = $this->input->post('nim');
+            $data['kelas'] = $this->input->post('kelas');
+            $data['modul'] = $this->input->post("modul");
+            $data['tipe'] = $this->upload->data('file_ext');
+            $data['ukuran'] = $this->upload->data('file_size');
+            $data['nama_berkas'] = $this->upload->data("file_name");
+            $this->db->insert('tb_pengumpulan', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Laporan telah dikumpulkan !</div>');
+
+            redirect('user/pengumpulan');
+        }
+
+        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+        $this->load->view('halpengumpulan', $data);
+
+        $data['title'] = 'Praktikum Pemrograman Online';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['berkas'] = $this->db->get('tb_berkas');
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('user/praktikum', $data);
+        $this->load->view('templates/footer');
+    }
 }
