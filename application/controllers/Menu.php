@@ -67,4 +67,16 @@ class Menu extends CI_Controller
             redirect('menu/submenu');
         }
     }
+    public function hapus_menu($id)
+    {
+        $query = $this->db->delete('user_menu', array('id' => $id));
+
+        if ($query > 0) {
+            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User Dinas / Institusi SUKSESS...');
+            redirect('menu');
+        } else {
+            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User Dinas / Institusi GAGAL...');
+            redirect('menu');
+        }
+    }
 }

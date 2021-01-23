@@ -102,7 +102,7 @@ class User extends CI_Controller
                     $this->db->where('email', $this->session->userdata('email'));
                     $this->db->update('user');
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Wrong Password!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Change Password Successed</div>');
                     redirect('user/changepassword');
                 }
             }
@@ -110,7 +110,7 @@ class User extends CI_Controller
     }
     public function praktikum()
     {
-        $data['title'] = 'Praktikum Pemrograman Online';
+        $data['title'] = 'Praktikum Alpro';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['berkas'] = $this->db->get('tb_berkas');
 
@@ -122,7 +122,7 @@ class User extends CI_Controller
     }
     public function pengumpulan()
     {
-        $data['title'] = 'Praktikum Pemrograman Online';
+        $data['title'] = 'Praktikum Alpro';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kumpul'] = $this->db->get('tb_pengumpulan');
 

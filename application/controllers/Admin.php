@@ -21,7 +21,7 @@ class Admin extends CI_Controller
     }
     public function modul()
     {
-        $data['title'] = 'Daftar Modul';
+        $data['title'] = 'Upload Modul';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['berkas'] = $this->db->get('tb_berkas');
 
@@ -69,5 +69,31 @@ class Admin extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('admin/pengumpulan', $data);
         $this->load->view('templates/footer');
+    }
+    public function mahasiswa()
+    {
+        $data['title'] = 'Kelola Mahasiswa';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['orang'] = $this->db->get('user');
+        $this->db->order_by('date_created', 'DESC');
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/mahasiswa', $data);
+        $this->load->view('templates/footer');
+    }
+    public function hapus_user($id)
+    {
+        $query = $this->db->delete('user', array('id' => $id));
+
+        if ($query > 0) {
+            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User Dinas / Institusi SUKSESS...');
+            redirect('admin/mahasiswa');
+        } else {
+            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User Dinas / Institusi GAGAL...');
+            redirect('admin/mahasiswa');
+        }
     }
 }

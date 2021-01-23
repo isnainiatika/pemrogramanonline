@@ -73,6 +73,8 @@ class Auth extends CI_Controller
         }
 
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('nim', 'nim', 'required|trim');
+        $this->form_validation->set_rules('class', 'class', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
         ]);
@@ -92,8 +94,10 @@ class Auth extends CI_Controller
             $email = $this->input->post('email', true);
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
+                'nim' => htmlspecialchars($this->input->post('nim', true)),
+                'class' => htmlspecialchars($this->input->post('class', true)),
                 'email' => htmlspecialchars($email),
-                'image' => 'default.jpg',
+                'image' => 'default.png',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => 2,
                 'is_active' => 0,

@@ -23,11 +23,11 @@
                     <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>user/proses">
                         <?= $this->session->flashdata('message'); ?>
                         <div>Nama : </div>
-                        <div><input type="text" class="form-control" name="nama"></div>
+                        <div><input type="text" class="form-control" name="nama" value="<?= $user['name']; ?>" readonly></div>
                         <div>Nim : </div>
-                        <div><input type="text" class="form-control" name="nim"></div>
+                        <div><input type="text" class="form-control" name="nim" value="<?= $user['nim']; ?>" readonly></div>
                         <div>Kelas : </div>
-                        <div><input type="text" class="form-control" name="kelas"></div>
+                        <div><input type="text" class="form-control" name="kelas" value="<?= $user['class']; ?>" readonly></div>
                         <div>Modul : </div>
                         <div><input type="text" class="form-control" name="modul"></div>
                         <div>Laporan : </div>

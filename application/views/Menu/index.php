@@ -29,8 +29,7 @@
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $m['menu']; ?></td>
                             <td>
-                                <a href="" class="badge badge-success">edit</a>
-                                <a href="" class="badge badge-danger">delete</a>
+                                <a href="menu/hapus_menu/<?= $m['id']; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?php $i++; ?>
