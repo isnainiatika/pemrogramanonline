@@ -20,7 +20,9 @@
                         echo "<hr/>";
                     }
                     ?>
-                    <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>index.php/admin/proses">
+                    <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>index.php/asprak/proses">
+                        <div>Nama : </div>
+                        <div><input type="text" class="form-control" name="nama" value="<?= $user['name']; ?>" readonly></div>
                         <div>Berkas : </div>
                         <div><input type="file" name="berkas"></div>
                         <div>Keterangan : </div>
@@ -47,6 +49,7 @@
                 <th>No</th>
                 <th>Keterangan Berkas</th>
                 <th>Tanggal Upload</th>
+                <th>Nama yang Uplod</th>
                 <th>Action</th>
 
             </tr>
@@ -59,6 +62,8 @@
 
                     <td><?php echo $row->keterangan_berkas; ?></td>
                     <td><?php echo $row->tanggal_upload; ?></td>
+                    <td><?php echo $row->nama_asprak; ?></td>
+
                     <td>
                         <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
 
