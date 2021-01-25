@@ -25,7 +25,7 @@
                         <div>Nama : </div>
                         <div><input type="text" class="form-control" name="nama" value="<?= $user['name']; ?>" readonly></div>
                         <div>Nim : </div>
-                        <div><input type="text" class="form-control" name="nim" value="<?= $user['nim']; ?>" readonly></div>
+                        <div><input type="text" class="form-control" name="email" value="<?= $user['email']; ?>" readonly></div>
                         <div>Kelas : </div>
                         <div><input type="text" class="form-control" name="kelas" value="<?= $user['class']; ?>" readonly></div>
                         <div>Modul : </div>
@@ -44,16 +44,7 @@
     </div>
 
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-12">
-                    <h1 style="text-align: center;">Belajar Pemrograman Online</h1>
-                </div><!-- /.col -->
 
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
 
     <!-- /.content-header -->
 
@@ -66,7 +57,7 @@
                         <div class="card-body">
                             <h5 style="text-align: center;">Modul Praktikum</h5>
 
-                            <embed type="application/pdf" src="<?= base_url('modul/' . $pdf[0]->nama_berkas) ?>" width="500" height="700"></embed>
+                            <embed type="application/pdf" src="<?= base_url('modul/' . $pdf[0]->nama_berkas) ?>" width="580" height="700"></embed>
 
 
                         </div>
@@ -80,7 +71,7 @@
                         <div class="card-header">
                             <h5 class="m-0" style="text-align: center;">Training Coding </h5>
 
-                            <iframe height="700px" width="100%" src="https://repl.it/@Isrika/PaltryModestCoolingfan?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                            <iframe height="700px" width="100%" src="https://repl.it/@<?= $user['nama_repl']; ?>/praktikum?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
                         </div>
                     </div>
 

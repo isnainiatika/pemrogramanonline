@@ -1,4 +1,4 @@
-<div class="wrapper" style="background-color:lightblue;">
+<div class="wrapper">
 
 
 
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 style="text-align: center;">Belajar Pemrograman Online</h1>
+
                     <h3 style="text-align: center;">Daftar Pengumpulan</h3>
                 </div><!-- /.col -->
 
@@ -17,7 +17,7 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content" background-color="blue">
+    <div class="content">
         <div class="col">
             <div class="card">
                 <div class="card-header">
@@ -27,8 +27,8 @@
                             <th>Modul</th>
                             <th>Kelas</th>
                             <th>Nama</th>
-                            <th>NIM</th>
-
+                            <th>Email</th>
+                            <th>Tanggal Upload</th>
 
                         </tr>
                         <?php
@@ -40,8 +40,8 @@
                                 <td><?php echo $row->modul; ?></td>
                                 <td><?php echo $row->kelas; ?></td>
                                 <td><?php echo $row->nama; ?></td>
-                                <td><?php echo $row->nim; ?></td>
-
+                                <td><?php echo $row->email; ?></td>
+                                <td><?php echo $row->date_uploded; ?></td>
 
                             </tr>
                         <?php

@@ -42,7 +42,7 @@
     <div class="col-lg">
         <hr>
 
-        <h4 style="text-align: center;">Daftar Modul </h4>
+        <h4 style="text-align: center;" style="text-align: center;">Daftar Modul </h4>
 
         <table border="1" width="100%" style="text-align:center;">
             <tr>

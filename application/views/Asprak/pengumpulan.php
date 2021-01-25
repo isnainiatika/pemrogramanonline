@@ -11,7 +11,7 @@
                         <th>Modul</th>
                         <th>Kelas</th>
                         <th>Nama</th>
-                        <th>NIM</th>
+                        <th>Email</th>
                         <th>Hasil</th>
                         <th>Tanggal Upload</th>
 
@@ -25,7 +25,7 @@
                             <td><?php echo $row->modul; ?></td>
                             <td><?php echo $row->kelas; ?></td>
                             <td><?php echo $row->nama; ?></td>
-                            <td><?php echo $row->nim; ?></td>
+                            <td><?php echo $row->email; ?></td>
                             <td> <a href="<?= site_url('viewpengumpulan') ?>/<?= $row->id; ?>">view pdf</a></td>
                             <td><?php echo $row->date_uploded; ?></td>
 

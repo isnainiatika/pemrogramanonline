@@ -124,7 +124,8 @@ class User extends CI_Controller
     {
         $data['title'] = 'Praktikum Alpro';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+        $data['kumpul'] = $this->db->get_where('tb_pengumpulan', ['email' => $this->session->userdata('email')]);
+
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -147,7 +148,7 @@ class User extends CI_Controller
             $this->load->view('user/praktikum', $error);
         } else {
             $data['nama'] = $this->input->post('nama');
-            $data['nim'] = $this->input->post('nim');
+            $data['email'] = $this->input->post('email');
             $data['kelas'] = $this->input->post('kelas');
             $data['modul'] = $this->input->post("modul");
             $data['tipe'] = $this->upload->data('file_ext');
@@ -164,7 +165,6 @@ class User extends CI_Controller
 
         $data['title'] = 'Praktikum Pemrograman Online';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['berkas'] = $this->db->get('tb_berkas');
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

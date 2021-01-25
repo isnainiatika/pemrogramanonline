@@ -35,7 +35,7 @@
                     <td><?= date('d F Y', $user['date_created']); ?></td>
                     <td>
 
-                        <a href="hapus_user/<?= $row->id; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i><br> HAPUS</a>
+                        <a href="hapus_user/<?= $row->id; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
                     </td>
 
                 </tr>

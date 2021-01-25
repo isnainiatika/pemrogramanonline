@@ -24,6 +24,10 @@
                                     <?= form_error('class', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="nama_repl" name="nama_repl" placeholder="Nama Repl" value="<?= set_value('nama_repl'); ?>">
+                                    <?= form_error('nama_repl', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
                                     <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
