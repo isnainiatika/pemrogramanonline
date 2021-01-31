@@ -150,8 +150,8 @@ class User extends CI_Controller
             $data['nama'] = $this->input->post('nama');
             $data['email'] = $this->input->post('email');
             $data['kelas'] = $this->input->post('kelas');
-            $data['modul'] = $this->input->post("modul");
-            $data['tipe'] = $this->upload->data('file_ext');
+            $data['modul'] = $this->input->post('modul');
+            $data['nama_asprak'] = $this->input->post('nama_asprak');
             $data['ukuran'] = $this->upload->data('file_size');
             $data['nama_berkas'] = $this->upload->data("file_name");
             $this->db->insert('tb_pengumpulan', $data);

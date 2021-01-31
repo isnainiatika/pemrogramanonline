@@ -54,6 +54,34 @@ class Asprak extends CI_Controller
         $data['title'] = 'Pengumpulan Laporan';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
+
+        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('asprak/pengumpulan', $data);
+        $this->load->view('templates/footer');
+    }
+    function select_modul()
+    {
+        $data['title'] = 'Pengumpulan Laporan';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->db->from('tb_pengumpulan');
+        $this->db->order_by('modul');
+
+        $data['kumpul'] = $this->db->get();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('asprak/pengumpulan', $data);
+        $this->load->view('templates/footer');
+    }
+    function select_kelas()
+    {
+        $data['title'] = 'Pengumpulan Laporan';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $this->db->from('tb_pengumpulan');
         $this->db->order_by('kelas');
 
@@ -63,6 +91,26 @@ class Asprak extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('asprak/pengumpulan', $data);
         $this->load->view('templates/footer');
+    }
+    function select_tanggal()
+    {
+        $data['title'] = 'Pengumpulan Laporan';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->db->from('tb_pengumpulan');
+        $this->db->order_by('date_uploded');
+
+        $data['kumpul'] = $this->db->get();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('asprak/pengumpulan', $data);
+        $this->load->view('templates/footer');
+    }
+    function select_asprak()
+    {
+        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+        $this->load->view('table', $data);
     }
     public function viewlaporan()
     {

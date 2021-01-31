@@ -44,38 +44,44 @@
 
         <h4 style="text-align: center;" style="text-align: center;">Daftar Modul </h4>
 
-        <table border="1" width="100%" style="text-align:center;">
-            <tr>
-                <th>No</th>
-                <th>Keterangan Berkas</th>
-                <th>Tanggal Upload</th>
-                <th>Nama yang Uplod</th>
-                <th>Action</th>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Keterangan Berkas</th>
+                        <th>Tanggal Upload</th>
+                        <th>Nama yang Uplod</th>
+                        <th>Action</th>
 
-            </tr>
-            <?php
-            $no = 1;
-            foreach ($berkas->result() as $row) {
-            ?>
-                <tr>
-                    <td><?php echo $no++; ?></td>
+                    </tr>
+                </thead>
+                <tbody>
 
-                    <td><?php echo $row->keterangan_berkas; ?></td>
-                    <td><?php echo $row->tanggal_upload; ?></td>
-                    <td><?php echo $row->nama_asprak; ?></td>
+                    <?php
+                    $no = 1;
+                    foreach ($berkas->result() as $row) {
+                    ?>
+                        <tr>
+                            <td><?php echo $no++; ?></td>
 
-                    <td>
-                        <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
+                            <td><?php echo $row->keterangan_berkas; ?></td>
+                            <td><?php echo $row->tanggal_upload; ?></td>
+                            <td><?php echo $row->nama_asprak; ?></td>
 
-                    </td>
+                            <td>
+                                <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
 
-                </tr>
-            <?php
-            }
-            ?>
-        </table>
+                            </td>
 
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
 
+        </div>
     </div>
     <!-- /.card -->
 

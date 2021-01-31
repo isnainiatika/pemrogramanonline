@@ -31,47 +31,52 @@
                             <h4 style="text-align: center;">Modul Pertemuan</h4>
                             <hr>
                             <div class="col-lg">
-                                <table border="1" width="100%" style="text-align:center;">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Keterangan Berkas</th>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Keterangan Berkas</th>
 
-                                        <th>Action</th>
+                                                <th>Action</th>
 
-                                    </tr>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($berkas->result() as $row) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $no++; ?></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $no = 1;
+                                            foreach ($berkas->result() as $row) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $no++; ?></td>
 
-                                            <td><?php echo $row->keterangan_berkas; ?></td>
+                                                    <td><?php echo $row->keterangan_berkas; ?></td>
 
-                                            <td>
-                                                <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
+                                                    <td>
+                                                        <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
 
-                                            </td>
+                                                    </td>
 
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
-                                </table>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
 
 
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
-
-
+                    <!-- /.col-md-6 -->
                 </div>
-                <!-- /.col-md-6 -->
-            </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+
+
     </div>
-
-
-</div>
-<!-- End of Main Content -->
+    <!-- End of Main Content -->
