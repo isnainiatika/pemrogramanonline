@@ -43,7 +43,7 @@
 
                                             <td><?php echo $row->nama; ?> </td>
                                             <td><?php echo $row->email; ?></td>
-                                            <td><a href="<?= site_url('viewpengumpulan') ?>/<?= $row->id; ?>"> | View Laporan</a></td>
+                                            <td><a href="<?= site_url('viewpengumpulan') ?>/<?= $row->id; ?>">View Laporan</a></td>
 
                                             <td><?php echo $row->date_uploded; ?></td>
                                         </tr>

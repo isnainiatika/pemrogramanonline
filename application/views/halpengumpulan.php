@@ -21,43 +21,48 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <table border="1" width="100%" style="text-align:center;">
-                        <tr>
-                            <th>No</th>
-                            <th>Modul</th>
-                            <th>Kelas</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Tanggal Upload</th>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Modul</th>
+                                    <th>Kelas</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Tanggal Upload</th>
 
-                        </tr>
-                        <?php
-                        $no = 1;
-                        foreach ($kumpul->result() as $row) {
-                        ?>
-                            <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $row->modul; ?></td>
-                                <td><?php echo $row->kelas; ?></td>
-                                <td><?php echo $row->nama; ?></td>
-                                <td><?php echo $row->email; ?></td>
-                                <td><?php echo $row->date_uploded; ?></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($kumpul->result() as $row) {
+                                ?>
+                                    <tr>
+                                        <td><?php echo $no++; ?></td>
+                                        <td><?php echo $row->modul; ?></td>
+                                        <td><?php echo $row->kelas; ?></td>
+                                        <td><?php echo $row->nama; ?></td>
+                                        <td><?php echo $row->email; ?></td>
+                                        <td><?php echo $row->date_uploded; ?></td>
 
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
 
+                    </div>
                 </div>
             </div>
+            <!-- /.card -->
+
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- /.card -->
+        <!-- /.content-wrapper -->
 
-        </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-
-</div>
 </div>
