@@ -72,11 +72,23 @@ class Menu extends CI_Controller
         $query = $this->db->delete('user_menu', array('id' => $id));
 
         if ($query > 0) {
-            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User Dinas / Institusi SUKSESS...');
+            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data  SUKSESS...');
             redirect('menu');
         } else {
-            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User Dinas / Institusi GAGAL...');
+            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data GAGAL...');
             redirect('menu');
+        }
+    }
+    public function hapus_submenu($id)
+    {
+        $query = $this->db->delete('user_sub_menu', array('id' => $id));
+
+        if ($query > 0) {
+            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data SUKSESS...');
+            redirect('menu/submenu');
+        } else {
+            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data GAGAL...');
+            redirect('menu/submenu');
         }
     }
 }

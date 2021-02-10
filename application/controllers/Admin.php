@@ -39,10 +39,10 @@ class Admin extends CI_Controller
         $query = $this->db->delete('user', array('id' => $id));
 
         if ($query > 0) {
-            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User Dinas / Institusi SUKSESS...');
+            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User SUKSESS...');
             redirect('admin/mahasiswa');
         } else {
-            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User Dinas / Institusi GAGAL...');
+            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User GAGAL...');
             redirect('admin/mahasiswa');
         }
     }

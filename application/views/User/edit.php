@@ -24,6 +24,27 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="nim" class="col-sm-2 col-form-label">NIM </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nim" name="nim" value="<?= $user['nim']; ?>">
+                    <?= form_error('nim', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="class" class="col-sm-2 col-form-label">Kelas</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="class" name="class" value="<?= $user['class']; ?>">
+                    <?= form_error('class', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="nama_repl" class="col-sm-2 col-form-label">Nama Repl </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nama_repl" name="nama_repl" value="<?= $user['nama_repl']; ?>">
+                    <?= form_error('nama_repl', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-sm-2">Picture</div>
                 <div class="div col-sm-10">
                     <div class="row">

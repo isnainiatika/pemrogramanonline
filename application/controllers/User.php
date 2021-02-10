@@ -33,6 +33,9 @@ class User extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $name = $this->input->post('name');
+            $nim = $this->input->post('nim');
+            $class = $this->input->post('class');
+            $nama_repl = $this->input->post('nama_repl');
             $email = $this->input->post('email');
 
             //cek jika ada gambar yang akan di upload
@@ -59,6 +62,9 @@ class User extends CI_Controller
             }
 
             $this->db->set('name', $name);
+            $this->db->set('nim', $nim);
+            $this->db->set('class', $class);
+            $this->db->set('nama_repl', $nama_repl);
             $this->db->where('email', $email);
             $this->db->update('user');
 

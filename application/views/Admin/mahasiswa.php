@@ -15,6 +15,7 @@
                         <th>NIM</th>
                         <th>Kelas</th>
                         <th>Email</th>
+                        <th>Nama Repl</th>
 
                         <th>Role</th>
                         <th>Date Created</th>
@@ -34,6 +35,7 @@
                             <td><?php echo $row->nim; ?></td>
                             <td><?php echo $row->class; ?></td>
                             <td><?php echo $row->email; ?></td>
+                            <td><?php echo $row->nama_repl; ?></td>
 
                             <td><?php echo $row->role_id; ?></td>
                             <td><?= date('d F Y', $user['date_created']); ?></td>
