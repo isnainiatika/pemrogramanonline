@@ -1,7 +1,7 @@
 <div class="wrapper" style="background-color:lightblue;">
     <?php if ($this->session->userdata('role_id') == 2) { ?>
         <?= $this->session->flashdata('message'); ?>
-        <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Form Pengumpulan</a>
+        <a type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Form Pengumpulan</a>
 
         <hr />
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -1,7 +1,7 @@
 <!-- Main content -->
 <div class="content">
     <hr />
-    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Upload Modul</a>
+    <a type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Upload Modul</a>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -70,8 +70,8 @@
                             <td><?php echo $row->nama_asprak; ?></td>
 
                             <td>
-                                <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>">view pertemuan</a>
-
+                                <a href="<?= site_url('praktikum') ?>/<?= $row->kd_berkas; ?>" class="btn btn-warning "><i class="fas fa-eye"></i></a>
+                                <a href="hapus_modul/<?= $row->kd_berkas; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
                             </td>
 
                         </tr>

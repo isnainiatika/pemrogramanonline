@@ -13,11 +13,11 @@
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>') ?>
 
             <?= $this->session->flashdata('message'); ?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
-            <table class="table table-hover">
+            <a href="" class="btn btn-success mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">No</th>
                         <th scope="col">Menu</th>
                         <th scope="col">Action</th>
                     </tr>

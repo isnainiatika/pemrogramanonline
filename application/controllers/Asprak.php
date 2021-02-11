@@ -74,4 +74,16 @@ class Asprak extends CI_Controller
         $this->load->view('asprak/viewpengumpulan', $data);
         $this->load->view('templates/footer');
     }
+    public function hapus_modul($kd_berkas)
+    {
+        $query = $this->db->delete('tb_berkas', array('kd_berkas' => $kd_berkas));
+
+        if ($query > 0) {
+            $this->session->set_flashdata('ok_del', 'HAPUS Data SUKSESS...');
+            redirect('asprak/modul');
+        } else {
+            $this->session->set_flashdata('err_del', 'HAPUS Data GAGAL...');
+            redirect('asprak/modul');
+        }
+    }
 }

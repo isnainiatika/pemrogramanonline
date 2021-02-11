@@ -25,7 +25,7 @@
                                         <th>Kelas</th>
                                         <th>Nama Praktikan</th>
                                         <th>Email</th>
-                                        <th>View Laporan</th>
+                                        <th>View </th>
                                         <th>Tanggal Upload</th>
                                     </tr>
                                 </thead>
@@ -43,7 +43,7 @@
 
                                             <td><?php echo $row->nama; ?> </td>
                                             <td><?php echo $row->email; ?></td>
-                                            <td><a href="<?= site_url('viewpengumpulan') ?>/<?= $row->id; ?>">View Laporan</a></td>
+                                            <td><a href="<?= site_url('viewpengumpulan') ?>/<?= $row->id; ?>" class="btn btn-warning "><i class="fas fa-eye"></i></td>
 
                                             <td><?php echo $row->date_uploded; ?></td>
                                         </tr>
