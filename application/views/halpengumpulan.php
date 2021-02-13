@@ -31,6 +31,7 @@
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Tanggal Upload</th>
+                                    <th>Action</th>
 
                                 </tr>
                             </thead>
@@ -46,7 +47,8 @@
                                         <td><?php echo $row->nama; ?></td>
                                         <td><?php echo $row->email; ?></td>
                                         <td><?php echo $row->date_uploded; ?></td>
-
+                                        <td>
+                                            <a href="hapus_lap/<?= $row->id; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
                                     </tr>
                                 <?php
                                 }

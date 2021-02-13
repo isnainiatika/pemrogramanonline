@@ -178,4 +178,16 @@ class User extends CI_Controller
         $this->load->view('user/praktikum', $data);
         $this->load->view('templates/footer');
     }
+    public function hapus_lap($id)
+    {
+        $query = $this->db->delete('tb_pengumpulan', array('id' => $id));
+
+        if ($query > 0) {
+            $this->session->set_flashdata('ok_del', 'HAPUS Data SUKSESS...');
+            redirect('user/pengumpulan');
+        } else {
+            $this->session->set_flashdata('err_del', 'HAPUS Data GAGAL...');
+            redirect('user/pengumpulan');
+        }
+    }
 }

@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title><?= $title; ?></title>
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/img/code.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url() ?>/assets/img/icon.ico" type="image/x-icon">
 
     <!-- Custom fonts for this template -->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
