@@ -4,6 +4,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
+
     <div class="col-lg">
 
         <div class="table-responsive">
@@ -38,9 +39,10 @@
                             <td><?php echo $row->nama_repl; ?></td>
 
                             <td><?php echo $row->role_id; ?></td>
-                            <td><?= date('d F Y', $user['date_created']); ?></td>
+                            <td><?php echo date('d F Y', $row->date_created); ?></td>
                             <td>
 
+                                <a href="edit/<?= $row->id; ?>" class="btn btn-success "><i class="fas fa-edit"></i></a>
                                 <a href="hapus_user/<?= $row->id; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
                             </td>
 

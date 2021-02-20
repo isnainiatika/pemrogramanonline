@@ -11,4 +11,15 @@ class Menu_model extends CI_Model
         ";
         return $this->db->query($query)->result_array();
     }
+    private $table = "user_sub_menu";
+
+    public function getById($id)
+    {
+        return $this->db->get_where($this->table, ["id" => $id])->row();
+    }
+
+    public function update($data, $id)
+    {
+        return $this->db->update($this->table, $data, array('id' => $id));
+    }
 }

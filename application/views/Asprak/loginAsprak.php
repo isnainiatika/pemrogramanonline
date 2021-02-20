@@ -13,7 +13,8 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Selamat Datang di Aplikasi Pemrograman Online</h1>
+                                    <h3 class="h4 text-gray-900 mb-4">Silahkan login terlebih dahulu</h3>
                                 </div>
                                 <?= $this->session->flashdata('message'); ?>
 
@@ -35,10 +36,10 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('authAsprak/forgotpassword'); ?>">Forgot Password?</a>
+                                    <a class="small" href="<?= base_url('authAsprak/forgotpassword'); ?>">Lupa katasandi?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('authAsprak/registration'); ?>">Create an account</a>
+                                    <a class="small" href="<?= base_url('authAsprak/registration'); ?>">Belum punya akun?</a>
                                 </div>
 
                             </div>

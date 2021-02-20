@@ -91,4 +91,59 @@ class Menu extends CI_Controller
             redirect('menu/submenu');
         }
     }
+
+    function edit_submenu($id)
+    {
+
+        $data['title'] = 'Submenu Management';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->model('menu_model', 'menu');
+        $data['submenu'] = $this->menu->getById($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+
+        $this->load->view('menu/edit_submenu', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function update_submenu()
+    {
+        $data['title'] = 'Submenu Management';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+        $this->form_validation->set_rules('url', 'URL', 'required');
+        $this->form_validation->set_rules('icon', 'Icon', 'required');
+
+        if ($this->form_validation->run() == true) {
+            $id = $this->input->post('id');
+
+
+            $query['title'] = $this->input->post('title');
+            $query['menu_id'] = $this->input->post('menu_id');
+            $query['url'] = $this->input->post('url');
+            $query['icon'] = $this->input->post('icon');
+
+
+            $this->load->model('menu_model', 'menu');
+
+            $query['submenu'] = $this->menu->update($query, $id);
+
+            redirect('menu/submenu');
+        } else {
+            $id = $this->input->post('id');
+            $this->load->model('menu_model', 'menu');
+            $query['submenu'] = $this->menu->getById($id);
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+
+            $this->load->view('menu/edit_submenu', $data);
+            $this->load->view('templates/footer');
+        }
+    }
 }

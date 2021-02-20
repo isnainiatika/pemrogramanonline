@@ -44,7 +44,7 @@
                                 <td><?= $sm['is_active']; ?></td>
                                 <td>
                                     <a href="hapus_submenu/<?= $sm['id']; ?>" class="btn btn-danger " onclick="return confirm('Anda YAKIN ingin menghapus data ini ..?');"><i class="fas fa-trash-alt"></i></a>
-
+                                    <a href="edit_submenu/<?= $sm['id']; ?>" class="btn btn-success "><i class="fas fa-edit"></i></a>
                                 </td>
                             </tr>
                             <?php $i++; ?>
