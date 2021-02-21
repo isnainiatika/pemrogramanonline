@@ -49,4 +49,13 @@ class Admin_model extends CI_Model
     {
         return $this->db->delete($this->table, array("id" => $id));
     }
+    function Jum_date_created()
+    {
+        $this->db->group_by('dat_created');
+        $this->db->select('date_created');
+        $this->db->select("count(*) as total");
+        return $this->db->from('user')
+            ->get()
+            ->result();
+    }
 }

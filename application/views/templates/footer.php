@@ -67,6 +67,92 @@
 </script>
 
 
+
+
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+<script src="<?= base_url('assets/'); ?>js/demo/chart-bar-demo.js"></script>
+<script type="text/javascript">
+    // Pie Chart Example
+    var ctx = document.getElementById("myPieChart");
+    var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Mahasiswa", "Asisten Praktikum", "Administrator"],
+            datasets: [{
+                data: [
+                    <?php echo $this->db->query("select role_id from user where role_id='2'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where role_id='3'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where role_id='1'")->num_rows(); ?>
+                ],
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 80,
+        },
+    });
+</script>
+<script type="text/javascript">
+    // Pie Chart Example
+    var ctx = document.getElementById("PieChartclass");
+    var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["IF 07 A", "IF 07 B", "IF 07 C", "IF 07 D", "IF 07 E"],
+            datasets: [{
+                data: [
+                    <?php echo $this->db->query("select role_id from user where class='IF 07 A'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where class='IF 07 B'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where class='IF 07 C'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where class='IF 07 D'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select role_id from user where class='IF 07 E'")->num_rows(); ?>,
+
+                ],
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#dade04', '#e8200e'],
+                hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#f3f705', '#f54105'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 80,
+        },
+    });
+</script>
 </body>
 
 </html>

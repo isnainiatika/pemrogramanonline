@@ -5,7 +5,7 @@
 
         <div class="card" style="background: cadetblue;">
 
-            <h1 style="text-align: center; color: white">Welcome back <?= $user['name']; ?> as a Admin</h1>
+            <h3 style="text-align: center; color: white">Welcome back <?= $user['name']; ?> as a Administrator</h3>
 
         </div>
         <br>
@@ -18,12 +18,12 @@
                 <div class="card" style="text-align: center; color:chartreuse;">
                     <a href="user">
                         <br>
-                        <h1>
+                        <h2>
                             <i class="fas fa-user"></i>
-                        </h1>
-                        <h3>
+                        </h2>
+                        <h2>
                             My Profile
-                        </h3>
+                        </h2>
                         <br>
                     </a>
                 </div>
@@ -32,12 +32,12 @@
                 <div class="card" style="text-align: center;">
                     <a href="asprak/modul">
                         <br>
-                        <h1>
+                        <h2>
                             <i class="fas fa-user-tie"></i>
-                        </h1>
-                        <h3>
+                        </h2>
+                        <h2>
                             Halaman Asprak
-                        </h3>
+                        </h2>
                         <br>
                     </a>
 
@@ -48,10 +48,10 @@
                 <div class="card" style="text-align: center;">
                     <a href="admin/mahasiswa">
                         <br>
-                        <h1>
+                        <h2>
                             <i class="fas fa-user-cog col-xl"></i>
-                        </h1>
-                        <h3>Kelola Mahasiswa</h3>
+                        </h2>
+                        <h2>Kelola Mahasiswa</h2>
                         <br>
                     </a>
                 </div>
@@ -60,23 +60,90 @@
                 <div class="card" style="text-align: center;">
                     <a href="menu">
                         <br>
-                        <h1>
+                        <h2>
                             <i class="fas fa-cogs"></i>
-                        </h1>
-                        <h3>
+                        </h2>
+                        <h2>
                             Menu Management
-                        </h3>
+                        </h2>
                         <br>
                     </a>
-                    <br>
-                    <br>
                 </div>
                 <br>
             </div>
             <br>
+            <!-- Page Heading -->
+
+            <!-- Donut Chart -->
+            <div class="col-lg-6">
+                <div class="card shadow ">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">User Role</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="chart-pie pt-4">
+                            <canvas id="myPieChart"></canvas>
+                        </div>
+                        <hr>
+
+                        <div class="mt-4 text-center small">
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-primary"></i> Mahasiswa
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-success"></i> Asisten Praktikum
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-info"></i> Administrator
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow ">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Kelas</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="chart-pie pt-4">
+                            <canvas id="PieChartclass"></canvas>
+                        </div>
+                        <hr>
+
+                        <div class="mt-4 text-center small">
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-primary"></i>IF 07 A
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-success"></i> IF 07 B
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-info"></i> IF 07 C
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-warning"></i> IF 07 D
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-danger"></i> IF 07 E
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+
+
         </div>
-        <br>
     </div>
     <br>
+</div>
+<br>
 </div>
 <!-- End of Main Content -->

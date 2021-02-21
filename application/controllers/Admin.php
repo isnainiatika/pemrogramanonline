@@ -12,6 +12,7 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['orang'] = $this->db->get('user');
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -104,4 +105,10 @@ class Admin extends CI_Controller
             $this->load->view('templates/footer');
         }
     }
+    // public function graph()
+    // {
+    // 	$data['graph'] = $this->penduduk->graph();
+    // 	$this->load->view('chart', $data);
+    // }
+
 }
