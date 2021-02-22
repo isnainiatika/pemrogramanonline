@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2021 at 07:22 AM
+-- Generation Time: Feb 22, 2021 at 03:25 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.20
 
@@ -77,7 +77,6 @@ INSERT INTO `tb_pengumpulan` (`id`, `nama`, `email`, `kelas`, `modul`, `nama_asp
 (6, 'Isnaini Rizki Atika', 'isnainiatika02@gmail.com', 'IF 05 D', 'Sorting', 'Atika sari', 11093.6, '2019-05-14_051231.pdf', '2021-01-31 06:15:32'),
 (8, 'Rohmat Hidayat', 'niken@gmail.com', 'IF 05 D', 'Fungsi', 'Atika Sari', 166.33, '16_04_2335_bab11.pdf', '2021-01-31 06:21:19'),
 (12, 'Isnaini Rizki Atika', 'isnainiatika02@gmail.com', 'IF 05 D', 'Fungsi', 'Atika Ratna Sari', 568.77, 'Praktikum2_S1IF05D_17102130.pdf', '2021-01-31 06:08:20'),
-(13, 'Isnaini Rizki Atika', 'isnainiatika02@gmail.com', 'IF 05 D', 'Pseudocode', 'Atika Ratna Sari', 465.7, 'praktikum3_S1IF05D_17102130.pdf', '2021-01-31 06:13:50'),
 (14, 'Isnaini Rizki Atika', 'isnainiatika02@gmail.com', 'IF 05 D', 'Tipe Data', 'Atika Ratna Sari', 103.92, 'TUGAS_PRAKTIKUM_2-1.pdf', '2021-01-31 06:19:20');
 
 -- --------------------------------------------------------
@@ -105,10 +104,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `nim`, `class`, `nama_repl`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(2, 'Putri Rianti', '987928364', '', 'Isrika', 'rizkyatika14@yahoo.com', 'IMG_20200419_165733.jpg', '$2y$10$xYa5OOOTZnwMpuD4a16HuuegWHdlIVtLKOavCmOOvBYp8o/HkOBhu', 1, 1, 1611306973),
-(17, 'Isnaini Rizki Atika', '17102130', 'IF 05 D', 'Isrika', 'isnainiatika02@gmail.com', 'default.png', '$2y$10$urU8SLHzbdZDHp9lSoa8UuN4.d4nLi2ejZq3MDTw8NE14lpvC/Tti', 2, 1, 1611389169),
-(21, 'Rizki Atika', '17102567', 'IF 07 A', 'isnainiatika', 'atikarizki02@gmail.com', 'default.png', '$2y$10$1dLQkf7KMswdkCwfp5KzIOzUyun8UtNc9aI79.YvKBEOy8PI54ZMK', 3, 1, 1611410562),
-(26, 'Atika Ratna Sari', '17102777', 'IF 05 A', 'atikarizki', '17102130@ittelkom-pwt.ac.id', 'default.png', '$2y$10$TACdKG0BneZKLKc7k0whVOYptcd6QzCBsS8gRa/n1yHc5DhgmrnBq', 3, 1, 1611543697);
+(2, 'Putri Rianti', '999', 'IF 07 D', 'Isrika', 'rizkyatika14@yahoo.com', '07e90bc97a7854e6f53e36be8f7f1f85--islam-doodle.jpg', '$2y$10$xYa5OOOTZnwMpuD4a16HuuegWHdlIVtLKOavCmOOvBYp8o/HkOBhu', 1, 1, 1611306973),
+(17, 'Isnaini Rizki Atika', '1710215', 'IF 07 A', 'Isrika', 'isnainiatika02@gmail.com', 'default.png', '$2y$10$urU8SLHzbdZDHp9lSoa8UuN4.d4nLi2ejZq3MDTw8NE14lpvC/Tti', 2, 1, 1611389169),
+(21, 'Niken Tri Anugrahwati', '17102567', 'IF 07 B', 'isnainiatika', 'atikarizki02@gmail.com', 'default.png', '$2y$10$1dLQkf7KMswdkCwfp5KzIOzUyun8UtNc9aI79.YvKBEOy8PI54ZMK', 3, 1, 1611410562),
+(26, 'Atika Ratna Sari', '17102777', 'IF 07 C', 'atikarizki', '17102130@ittelkom-pwt.ac.id', 'default.png', '$2y$10$TACdKG0BneZKLKc7k0whVOYptcd6QzCBsS8gRa/n1yHc5DhgmrnBq', 3, 1, 1611543697),
+(28, 'Admin Pemrograman', '999', 'IF 07 E', 'atikarizki', 'programming.allpro@gmail.com', 'Logo-IF.jpg', '$2y$10$w93kX/OLGniBUpBsWbxT2uSGN96hFITgM4p3fQgRyllzYUq7rUwm2', 1, 1, 1613801245);
 
 -- --------------------------------------------------------
 
@@ -198,7 +198,7 @@ CREATE TABLE `user_sub_menu` (
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
 (1, 1, 'Dashboard', 'admin', 'fas fa-fw fa-tachometer-alt', 1),
 (2, 2, 'My Profile', 'user', 'fas fa-fw fa-user', 1),
-(3, 2, 'Edit Profile', 'user/edit', 'fas fa-user-edit', 1),
+(3, 2, 'Edit Profil', 'user/edit', 'fas fa-user-edit', 1),
 (4, 3, 'Menu Management', 'menu', 'far fa-fw fa-folder', 1),
 (5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder', 1),
 (8, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
@@ -226,7 +226,9 @@ CREATE TABLE `user_token` (
 --
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
-(23, '17102130@ittelkom-pwt.ac.id', '0HN/nf2u/wSP+FY/eqTHW+YIaMYha+QTkQmr91eIP6Q=', 1611543897);
+(23, '17102130@ittelkom-pwt.ac.id', '0HN/nf2u/wSP+FY/eqTHW+YIaMYha+QTkQmr91eIP6Q=', 1611543897),
+(24, 'isnainiatika02@gmail.com', 'F4df5RbXpwnZ4L7xNd1tADwDuHkGxuDj2qBEkeaMPJA=', 1613002583),
+(25, 'isnainiatika02@gmail.com', 'z6VJX/R7pNVDKP7emQiMAWD1TeT/Tspup1D3eczAnVw=', 1613723459);
 
 --
 -- Indexes for dumped tables
@@ -288,31 +290,31 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `tb_berkas`
 --
 ALTER TABLE `tb_berkas`
-  MODIFY `kd_berkas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `kd_berkas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tb_pengumpulan`
 --
 ALTER TABLE `tb_pengumpulan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -324,13 +326,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
