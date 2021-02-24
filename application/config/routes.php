@@ -53,4 +53,8 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['praktikum/(:any)'] = 'Praktikum/index';
+<<<<<<< HEAD
 $route['viewpengumpulan/(:any)'] = 'Viewpengumpulan/index';
+=======
+$route['viewpengumpulan/(:any)'] = 'ViewPengumpulan/index';
+>>>>>>> 6cc64c4fda54c2c2ccfc4dfc2036e35d49304371
