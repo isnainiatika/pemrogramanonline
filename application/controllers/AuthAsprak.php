@@ -45,6 +45,7 @@ class AuthAsprak extends CI_Controller
                 //cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'name' => $user['name'],
                         'email' => $user['email'],
                         'role_id' => $user['role_id']
                     ];

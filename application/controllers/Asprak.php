@@ -55,7 +55,7 @@ class Asprak extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 
-        $data['kumpul'] = $this->db->get('tb_pengumpulan');
+        $data['kumpul'] = $this->db->get_where('tb_pengumpulan', ['nama_asprak' => $this->session->userdata('name')]);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

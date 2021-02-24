@@ -10,6 +10,7 @@ class Praktikum extends CI_Controller
         $id = $this->uri->segment(2);
 
         $data['pdf'] = $this->db->get_where('tb_berkas', ['kd_berkas' => $id])->result();
+        $data['asprak'] = $this->db->get_where('user', ['role_id' => 3])->result_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

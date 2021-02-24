@@ -52,5 +52,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['praktikum/(:any)'] = 'praktikum/index';
-$route['viewpengumpulan/(:any)'] = 'viewpengumpulan/index';
+$route['praktikum/(:any)'] = 'Praktikum/index';
+$route['viewpengumpulan/(:any)'] = 'Viewpengumpulan/index';

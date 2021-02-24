@@ -32,7 +32,13 @@
                             <div>Modul : </div>
                             <div><input type="text" class="form-control" name="modul"></div>
                             <div>Nama Asprak : </div>
-                            <div><input type="text" class="form-control" name="nama_asprak"></div>
+                            <select name="nama_asprak" class="form-control" id="nama_asprak">
+                                <?php foreach ($asprak as $asprak) : ?>
+                                    <?php if ($asprak != null) { ?>
+                                        <option value="<?= $asprak['name']; ?>"><?= $asprak['name']; ?></option>
+                                    <?php } ?>
+                                <?php endforeach; ?>
+                            </select>
                             <div>Laporan : </div>
                             <div><input type="file" name="kumpul"></div>
                             <div class="modal-footer">
