@@ -40,10 +40,10 @@ class Admin extends CI_Controller
         $query = $this->db->delete('user', array('id' => $id));
 
         if ($query > 0) {
-            $this->session->set_flashdata('ok_del_dinas', 'HAPUS Data User SUKSESS...');
+            $this->session->set_flashdata('ok_del', 'HAPUS Data User SUKSESS...');
             redirect('admin/mahasiswa');
         } else {
-            $this->session->set_flashdata('err_del_dinas', 'HAPUS Data User GAGAL...');
+            $this->session->set_flashdata('err_del', 'HAPUS Data User GAGAL...');
             redirect('admin/mahasiswa');
         }
     }
@@ -58,10 +58,6 @@ class Admin extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        // $this->load->view('admin/index', $data);
-        // $this->load->view('templates/footer');
-
-        // $this->load->view('templates/header');
         $this->load->view('admin/edit', $data);
         $this->load->view('templates/footer');
     }

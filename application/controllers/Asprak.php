@@ -22,10 +22,10 @@ class Asprak extends CI_Controller
 		$this->load->view('asprak/modul', $data);
 		$this->load->view('templates/footer');
 	}
-	function create()
-	{
-		$this->load->view('form_upload');
-	}
+	// function create()
+	// {
+	// 	$this->load->view('form_upload');
+	// }
 
 	function proses()
 	{
@@ -61,21 +61,10 @@ class Asprak extends CI_Controller
 		$this->load->view('asprak/pengumpulan', $data);
 		$this->load->view('templates/footer');
 	}
-
-<<<<<<< HEAD
-        $data['kumpul'] = $this->db->get_where('tb_pengumpulan', ['nama_asprak' => $this->session->userdata('name')]);
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('asprak/pengumpulan', $data);
-        $this->load->view('templates/footer');
-    }
-=======
 	public function viewlaporan()
 	{
 		$data['title'] = 'View Laporan';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
->>>>>>> 6cc64c4fda54c2c2ccfc4dfc2036e35d49304371
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
